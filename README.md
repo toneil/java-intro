@@ -45,9 +45,9 @@ You should have a `public static void main (String[] argv)` method in the class 
 
 While I don't believe in learning by reading, I've compiled some useful getting-started texts and examples:
 
-- [Basics](tutorials/basics/README.md) 
-- [OOP](tutorials/oop/README.md)
-- [I/O](tutorials/io/README.md)
-- [Misc.](tutorials/misc/README.md)
+- [Basics](tutorials/basics) 
+- [OOP](tutorials/oop)
+- [I/O](tutorials/io)
+- [Misc.](tutorials/misc)
 
 ### Exercises
