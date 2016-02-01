@@ -2,7 +2,7 @@
 
 ## About the repository
 
-This is the landing page for the code group. It will contain some excersises and reference examples for various Java concepts.
+This is the landing page for the code group. It will contain some exercises and reference examples for various Java concepts.
 
 To copy the repository to your local machine, make sure that you have `git` installed, and type the following in your terminal 
 
