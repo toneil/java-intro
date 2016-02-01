@@ -7,7 +7,7 @@ This is the landing page for the code group. It will contain some exercises and 
 To copy the repository to your local machine, make sure that you have `git` installed, and type the following in your terminal 
 
 ```
-git clone https://github.com/toneil/java-intro.git
+> git clone https://github.com/toneil/java-intro.git
 ```
 
 ## Java essentials
@@ -17,7 +17,7 @@ To compile and run Java code you need to have `jdk` installed, which can be foun
 Compiling Java is done by executing the `javac` command like so:
 
 ```
-javac NameOfClass.java
+> javac NameOfClass.java
 ```
 
 **Important**
@@ -26,13 +26,13 @@ The name of the file has to match the class you want to compile.
 If you are using external libraries you have to tell the compiler where these are by specifying the `classpath`
 
 ```
-javac -cp path/to/lib1:path/to/lib2/path/to/lib3 NameOfClass.java
+> javac -cp path/to/lib1:path/to/lib2/path/to/lib3 NameOfClass.java
 ```
 
 When you have compiled NameOfClass.java you should see a new file appearing in the same folder. To execute this file, run
 
 ```
-java NameOfClass
+> java NameOfClass
 ```
 
 **Important**
