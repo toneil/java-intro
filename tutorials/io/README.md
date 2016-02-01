@@ -8,7 +8,40 @@ The examples in this section lists some of the most common ways to interact with
 
 Most process have 3 standard streams that communicate with the rest of the operating system, `stdin`, `stdout` and `stderr`. Usually, `stdin` lets you input things in the terminal in real time, `stdout` prints stuff to the terminal and nevermind `stderr` (it works like `stdout`). When you pipe processes in UNIX you connect the `stdout` of the first process to the `stdin` of the other. Take for example `cat` and `grep`: `cat textfile.txt | grep someTerm` will direct the contents of `textfile.txt` to the outstream of `cat`, pipe it to the instream of `grep`, which will search for "someTerm" and direct the results to the outstream of `grep`. Since we don't add any more pipes, grep's `stdout` will be printed to our terminal.
 
+In Java we access these streams through members of the `System` class: `System.out` gives us `stdout` and `System.in` `stdin`. You've already seen ``java System.out.println(someString)``; as you might expect, this sends `someString` (as well as an additional linebreak) to the `stdout` of whatever process we're running, and allows us to either see it in our terminal, pipe it to another process or send it to some file. 
 
+Output is easy; we needn't worry about interpreting the data (it's the next program's problem), we just chuck it out the door. Input, however, is a bit trickier - directly, we can only read low-level bytes from `stdin`. This is a bit bothersome, so instead we wrap the `stdin` (i.e. System.in) in a `Scanner` object.
+
+Here's an example of piping
+
+```java
+import java.util.Scanner;
+
+public class Repeat {
+	public static void main (String[] argv) {
+		Scanner sc = new Scanner(System.in); 
+		while (sc.hasNextLine()) {
+			String input = sc.nextLine();
+			System.out.println(input);
+			System.out.println(input);
+		}
+	}
+}
+```
+```
+> cat someText.txt
+Who
+ate
+my
+soup
+?
+> cat someText.txt | java Repeat | grep o > repeated.txt
+> cat repeated.txt
+Who
+Who
+soup
+soup
+```
 
 ## Command line arguments
 
