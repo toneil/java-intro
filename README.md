@@ -26,8 +26,9 @@ The name of the file has to match the class you want to compile.
 If you are using external libraries you have to tell the compiler where these are by specifying the `classpath`
 
 ```
-> javac -cp path/to/lib1:path/to/lib2/path/to/lib3 NameOfClass.java
+> javac -cp path/to/lib1:path/to/lib2:path/to/lib3 NameOfClass.java
 ```
+In Windows, the colons separating the paths are replaced by semi-colons (;)
 
 When you have compiled NameOfClass.java you should see a new file appearing in the same folder. To execute this file, run
 
@@ -38,3 +39,15 @@ When you have compiled NameOfClass.java you should see a new file appearing in t
 **Important**
 You should have a `public static void main (String[] argv)` method in the class you're trying to execute, or all hell will break loose. Or not. Nothing will happen, really. You'll just get a bunch of error messages.
 
+## Sections
+
+### Tutorials
+
+While I don't believe in learning by reading, I've compiled some useful getting-started texts and examples:
+
+- [Basics](tutorials/basics/README.md) 
+- [OOP](tutorials/oop/README.md)
+- [I/O](tutorials/io/README.md)
+- [Misc.](tutorials/misc/README.md)
+
+### Exercises
