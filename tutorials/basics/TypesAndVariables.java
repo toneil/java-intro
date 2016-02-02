@@ -35,7 +35,7 @@ public class TypesAndVariables {
 		System.out.println(a);
 
 		printTwice(str);
-		// str = printTwice(str); <- this will fail the compilation to fail. printTwice doesn't return any value!
+		// str = printTwice(str); <- this will cause the compilation to fail. printTwice doesn't return any value!
 
 	}
 
