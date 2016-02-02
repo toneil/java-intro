@@ -26,7 +26,7 @@ public class HelloWorld {
 
 ## Important syntax differences between Java and Python
 
-Pythoners as you are, you probably see two syntax oddities - curly brackets `{}` enclosing classes and methods, and semi colon `;` at the end of each statement. Curly brackets work like indentations (i.e. the number of spaces before each new line) do in Python: We use them for if/else-statements, methods, classes and loops. Indentation isn't necessary in Java, but it makes the code more readable, so don't skip them.
+Pythoners as you are, you probably see two syntax oddities - curly brackets `{}` enclosing classes and methods, and semi colon `;` at the end of each statement. Curly brackets work like indentations (i.e. the number of spaces before each new line) do in Python: We use them for if/else-statements, methods, classes and loops. Indentation isn't necessary in Java, but it makes the code more readable, so don't skip it.
 
 
 ## Examples
