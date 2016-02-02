@@ -7,12 +7,12 @@ public class BasicDataStructures {
         // - Arrays -
 
         // The most basic data struct in Java is the array. Arrays have fixed size.
-        int[] intArray = new int[40]; // Creates an array of 40 ints and store it to the variable intArray
+        int[] intArray = new int[10]; // Creates an array of 40 ints and store it to the variable intArray
         int[] someOtherArray;
         someOtherArray = new int[20];
 
-        // The elements of the array can be accessed like so:
-        intArray[4] = 4;
+        // We can put the number 6 in the 4:th position in the array like so:
+        intArray[4] = 6;
         System.out.println("Element at index 2 :" + intArray[2]);
 
         // If we try to access elements outside of our specified bounds we'll run into trouble.
