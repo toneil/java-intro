@@ -44,7 +44,7 @@ public class IntSet {
 		if (hasElement(element)) {
 			return;
 		}
-		if (numberOfElements >= elements.size) {
+		if (numberOfElements >= elements.length) {
 			resize();
 		}
 		elements[numberOfElements] = element;
@@ -61,8 +61,8 @@ public class IntSet {
 	}
 
 	private void resize () {
-		int[] newElemArray = int[elements.size * 2];
-		for (int i = 0; i < elements.size; i++) {
+		int[] newElemArray = new int[elements.length * 2];
+		for (int i = 0; i < elements.length; i++) {
 			newElemArray[i] = elements[i];
 		}
 		elements = newElemArray;
@@ -74,7 +74,29 @@ In the above class, only the constructor, add and hasElement methods are visible
 A good maxim is to use `private` for everything that doesn't absolutely needs to be public. In particular, member variables should generally be hidden.
 
 ## The `static` keyword
-...
+
+In the IntSet example above, each instance (object) of the IntSet class has its own elements int array and its own numberOfElements counter. This, of course, makes a lot of sense; we wouldn't want our different sets to share all their data with eachother. 
+
+To contrast this, consider the method `Integer.parseInt(String s)`. It takes a numerical string and returns the corresponding `Integer`. But the method isn't bound to any given `Integer` - this property of conversion between strings and integers doesn't relate to, say, 5 or 273, but rather to integers as a concept or group. Therefore `Integer.parseInt` is declared `static`, meaning that it belongs to the *class* `Integer` and not to the instantiated objects!
+
+One important thing to note about static methods is that they can't call non-static methods (unless you instantiate an object from which you can call it):
+
+```java
+public class A {
+	public static void main (String[] argv) {
+
+		methodA(); // This will cause compilation to fail
+		methodB(); // Works;
+		
+		A instance = new A(); // Create instance of A.
+		instance.methodA(); // Works
+	}
+
+	private void methodA () {}
+
+	private static void methodB () {}
+}
+```
 
 ## Inheritance
 
@@ -86,7 +108,3 @@ public class Dog extends Animal {
 }
 ```
 
-
-
-## Interfaces
-....
