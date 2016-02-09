@@ -43,6 +43,51 @@ soup
 soup
 ```
 
+## File I/O
+
+First off, working with files comes with an inherent problem: The location of the file you're trying to read or write to might not exist, which may cause your program to throw a fit! Because of this, you'll see a lot of `try ... catch` syntax when dealing with files (or here, `throws Exception` in the main methods); this is how *exceptions* are treated in Java. I'll probably do a section on exceptions and errors at some later point. For now you can ignore anything having to do with the words try/catch/throw.
+
+Aaaaanyway, when reading/writing files it's often easiest to work with *buffers*, objects that abstracts away most of the low-level nitty-gritty stuff and offers clear "I want to read one line from this file"-functionality. There are a couple of different ways to go about this
+
+### Read file
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+
+public class FileReadExample {
+   public static void main(String[] args) throws Exception { 
+   		String  thisLine = null;
+    	
+    	File file = new File("sample-file.dat");
+
+    	// The FileReader gives us byte-by-byte access to the file
+    	// BufferedReader lets us treat the stream as lines of text
+		BufferedReader reader = new BufferedReader(new FileReader(file));
+
+    	while ((thisLine = reader.readLine()) != null) { 
+        	System.out.println(thisLine);
+    	}
+
+    	// It's good practice to close any open file streams when you're done with them
+    	reader.close();       
+   	}
+}
+
+### Write file
+
+import java.io.PrintWriter;
+import java.io.File;
+
+public class FileWriteExample {
+  	public static void main(String[] args) throws Exception {
+    	File file = new File ("output.txt");
+    	PrintWriter printWriter = new PrintWriter(file);
+    	printWriter.println ("hello");
+    	printWriter.close ();       
+  	}
+}
+
 ## Command line arguments
 
 It's time to look at that cryptic `String[] argv` stuff you've seen in all these main methods. It's actually quite straight forward: When executing a Java program you can specify additional arguments for it to process, separated with whitespaces:
