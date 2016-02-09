@@ -51,6 +51,7 @@ Aaaaanyway, when reading/writing files it's often easiest to work with *buffers*
 
 ### Read file
 
+```java
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -73,9 +74,11 @@ public class FileReadExample {
     	reader.close();       
    	}
 }
+```
 
 ### Write file
 
+```java
 import java.io.PrintWriter;
 import java.io.File;
 
@@ -87,6 +90,7 @@ public class FileWriteExample {
     	printWriter.close ();       
   	}
 }
+```
 
 ## Command line arguments
 

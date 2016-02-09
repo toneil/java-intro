@@ -13,5 +13,5 @@ Using this list, your task is to build a command line search tool with the follo
 
 ## Code guidelines
 
-Try to 
+Try to make the internal model of the data clear and informative: Don't just make a single big list of all the data - represent MPs, parties etc. as classes and objects.
 
